@@ -2,6 +2,7 @@ import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { makeStyles } from '@material-ui/core/styles';
 import ShowDetail from './ShowDetail';
+import introduce1 from '../../../../images/introduce/1.png';
 const useStyles = makeStyles({
     max_image: {
         position: 'relative'
@@ -41,7 +42,7 @@ function ViewMaps(props) {
         <div className={classes.max_image}>
             <ShowDetail anchorEl={anchorEl} idShow={idShow} handleCloseShowDetail={handleCloseShowDetail} AddressDetail={AddressDetail} />
             <LazyLoadImage 
-                src={`asset/img/introduce/1.png`}
+                src={introduce1}
                 alt={``}
 
             />

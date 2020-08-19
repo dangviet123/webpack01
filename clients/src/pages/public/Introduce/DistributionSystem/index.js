@@ -6,9 +6,9 @@ import * as langs from '../../../../constants/admincp/languages';
 import Breadcrumb from '../../../../components/public/Shares/Breadcrumb';
 import { useLocation } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
 import ViewMaps from '../../../../components/public/Introduce/DistributionSystem/ViewMaps';
 import {ac_fetchDistributionSystem} from '../../../../actions/public/Introduce/DistributionSystem';
+import introduce2 from '../../../../images/introduce/2.png';
 function DistributionSystem() {
     const dispatch = useDispatch();
     const location = useLocation();
@@ -77,9 +77,8 @@ function DistributionSystem() {
                             <div className="col-lg-7">
                                 <div className="img-2">
                                     <LazyLoadImage 
-                                        src={`asset/img/introduce/2.png`}
+                                        src={introduce2}
                                         alt={``}
-                                        effect="blur"
                                     />
                                 </div>
                             </div>

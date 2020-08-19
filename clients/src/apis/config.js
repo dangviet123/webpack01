@@ -1,1 +1,1 @@
-export const API_ENDPOINT = 'https://www.phanam.com.vn/homepage/sv-api/public/api';
+export const API_ENDPOINT = 'http://localhost/phanam_homepage/sv-api/public/api';

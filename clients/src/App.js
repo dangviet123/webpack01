@@ -46,17 +46,15 @@ function App(props) {
   return (
       <div className="app">
         <ThemeProvider theme={theme}>
-          <ConnectedRouter history={props.history}  basename="/homepage">
+          <ConnectedRouter history={props.history}>
               <CssBaseline />
               <ToastContainer />
               <MuiPickersUtilsProvider utils={MomentUtils} locale="vi">
-              <Suspense fallback={<div></div>}>
                 <Switch >
                     {renderRoutesPublic(ROUTE_PUBLIC)}
                     {renderRoutesLogin(ROUTE_LOGIN)}
                     {renderRoutesAdmin(ROUTE_ADMINCP)}
                 </Switch>
-              </Suspense>
                 
               </MuiPickersUtilsProvider>
             </ConnectedRouter>

@@ -4,6 +4,7 @@ import { DialogContent, Table, TableRow, TableCell, TableBody} from '@material-u
 import { makeStyles } from '@material-ui/core/styles';
 import Moment from 'react-moment';
 import Skeleton from '@material-ui/lab/Skeleton';
+import logo from '../../../../images/logo.png';
 const useStyles = makeStyles(() => ({
     h3_title: {
       textTransform: 'uppercase',
@@ -55,7 +56,7 @@ const useStyles = makeStyles(() => ({
             </div>
             <div className={classes.grow}></div>
             <div>
-              <img src={`asset/img/logo.png`} alt={``} width={200} />
+              <img src={logo} alt={``} width={200} />
             </div>
           </div>
           <div className={classes.candidate_information}>

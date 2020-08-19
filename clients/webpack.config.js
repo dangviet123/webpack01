@@ -5,12 +5,13 @@ const lbr =[
     '@date-io/date-fns',
     '@date-io/moment',
     '@jandenma/xlsx-style',
-    '@loadable/component',
     '@material-ui/core',
     '@material-ui/icons',
     '@material-ui/lab',
     '@material-ui/pickers',
+    '@material-ui/styles',
     'animated-number-react',
+    '@loadable/component',
     'axios',
     'chart.js',
     'ckeditor4-react',
@@ -47,13 +48,13 @@ const lbr =[
     'yup'
 ];
 module.exports = {
-    mode: 'development',
     node: {
         fs: "empty"
     },
     devServer: {
-        port: 3000,
+        port: 8080,
         //open: true
+        historyApiFallback: true,
     },
     entry: {
       bundle: './src/index.js', // file chạy chính  
@@ -61,27 +62,21 @@ module.exports = {
     },
     output: {
         filename: '[name].[chunkhash].js', // file bundle
-        path: path.resolve(__dirname, 'dist') // đường dẫn cho file
+        path: path.join(__dirname, 'dist') // đường dẫn cho file
     },
     module: {
         rules: [
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env','@babel/preset-react','babel-polyfill'], // biên dịch es6,7 jsx
-                        plugins: ["@babel/plugin-proposal-class-properties"] // sử dung error func es6
-                    }
-                }
+                use: 'babel-loader'
             },
             {
                 test: /\.css$/i,
                 use: [MiniCssExtractPlugin.loader, 'css-loader']
             },
             {
-                test: /\.(ttf|woff2|woff|dtd|svg|eot)$/i,
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
                 loader: 'file-loader',
                 options: {
                     outputPath: 'fonts',
@@ -97,18 +92,24 @@ module.exports = {
             
         ]
     },
-    optimization: { // code splitting tách thư viện
+    optimization: {
         splitChunks: {
-          cacheGroups: {
-            commons: {
-              test: /[\\/]node_modules[\\/]/,
-              name: 'vendor',
-              chunks: 'all'
+            cacheGroups: {
+                commons: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendor',
+                    chunks: 'all'
+                }
             }
-          }
         },
-        runtimeChunk: {name: "manifest"} // cacche lại các file khi không thay đổi
-      },
+        // splitChunks: {
+        //     chunks: 'all'
+        // },
+        runtimeChunk: {
+            name: "manifest",
+        }
+    },
+    //devtool: 'inline-source-map',
     plugins: [
         new MiniCssExtractPlugin(),
         new HtmlWebpackPlugin({

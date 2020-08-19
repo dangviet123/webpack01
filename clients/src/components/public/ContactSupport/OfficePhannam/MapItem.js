@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tooltip} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-
+import logo192 from '../../../../images/logo192.png';
 const useStyles = makeStyles(() => ({
     map_item: {
         width: 32,
@@ -27,7 +27,7 @@ function MapItem(props) {
         <div>
             <Tooltip title={props.text} placement="top"   arrow>
                 <div className={classes.map_item}>
-                    <img className={classes.image} width={22} src={`asset/img/logo192.png`} alt={`phanam`} />
+                    <img className={classes.image} width={22} src={logo192} alt={`phanam`} />
                 </div>
             </Tooltip>
             

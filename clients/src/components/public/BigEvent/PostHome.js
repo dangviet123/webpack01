@@ -3,6 +3,7 @@ import {link_event} from '../../../constants/admincp/config';
 import renderHTML from 'react-render-html';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Skeleton from '@material-ui/lab/Skeleton';
+import start from '../../../images/start.png';
 function PostHome(props) {
    const { Post,handleShowVideo } = props;
     const renderPost = () => {
@@ -18,7 +19,7 @@ function PostHome(props) {
                         height={`100%`}
                         width={`100%`}
                     />
-                    <div className="play-button" onClick={handleShowVideo}><img src={`asset/img/start.png`} alt="start" /></div>
+                    <div className="play-button" onClick={handleShowVideo}><img src={start} alt="start" /></div>
                 </div>
             </div>
         )
@@ -46,7 +47,7 @@ function PostHome(props) {
                 </div>
                 <div className="video">
                     <Skeleton  variant="rect" height={426} />
-                    <div className="play-button"><img src={`asset/img/start.png`} alt="start1" /></div>
+                    <div className="play-button"><img src={start} alt="start1" /></div>
                 </div>
         </div>
         )

@@ -4,6 +4,7 @@ import Popover from '@material-ui/core/Popover';
 import Typography from '@material-ui/core/Typography';
 import AddIcCallIcon from '@material-ui/icons/AddIcCall';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
+import logo from '../../../../images/logo.png';
 const useStyles = makeStyles((theme) => ({
     content_detail: {
       padding: theme.spacing(2),
@@ -56,7 +57,7 @@ function ShowDetail(props) {
             >
                 <div className={classes.content_detail}>
                     <Typography className={classes.typography}>
-                        <img width={200} src={`asset/img/logo.png`} alt={`PHANAM`} />
+                        <img width={200} src={logo} alt={`PHANAM`} />
                     </Typography>
                     <Typography className={classes.typography}>
                         <strong className={classes.title}>{AddressDetail.Map}</strong>

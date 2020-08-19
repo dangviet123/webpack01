@@ -1,5 +1,6 @@
 import React from 'react';
 import * as langs from '../../../../constants/admincp/languages';
+import logo from '../../../../images/logo.png';
 function Company(props) {
     const { ListOffice,getMap } = props;
 
@@ -26,7 +27,7 @@ function Company(props) {
     return (
         <div className="col-lg-4">
             <div className="location-wrapper">
-                <div className="logo"><img src={`${process.env.PUBLIC_URL}/asset/img/logo.png`} alt="" /></div>
+                <div className="logo"><img src={logo} alt="" /></div>
                 <div className="list-item">
                     {ListOffice.length > 0 ? renderCompany() : ''}
                 </div>

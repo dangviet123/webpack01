@@ -7,6 +7,7 @@ import { IconButton } from '@material-ui/core';
 import {useDispatch,useSelector} from 'react-redux';
 import { ac_fetchMenu } from '../../../actions/public/Home/Header';
 import Skeleton from '@material-ui/lab/Skeleton';
+import logo from '../../../images/logo.png';
 function Header() {
     const dispatch = useDispatch();
     const history = useHistory();
@@ -80,7 +81,7 @@ function Header() {
         return (
             <div className="container menu-bar">
                 <div className="logo" style={{cursor: 'pointer'}} onClick={loactionHomePage} >
-                    <img src={`asset/img/logo.png`} alt="" />
+                    <img src={logo} alt="" />
                 </div>
                 <div className="mainnav">
                     <div className="nav-top ml-auto">

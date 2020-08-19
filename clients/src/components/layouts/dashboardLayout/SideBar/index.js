@@ -16,6 +16,7 @@ import {
 import {ac_getSideBar} from '../../../../actions/admincp/SiderBar';
 import Footer from '../Footer';
 import Skeleton from '@material-ui/lab/Skeleton';
+import 'font-awesome/css/font-awesome.min.css';
 function SideBar(props) {
     //const matches = useMediaQuery('(max-width:952px)');
     const dispatch = useDispatch()
