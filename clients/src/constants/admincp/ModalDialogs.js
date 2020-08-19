@@ -1,0 +1,2 @@
+export const SHOW_MODAL = 'SHOW_MODAL';
+export const SHOW_MODAL_CONFIRM = 'SHOW_MODAL_CONFIRM';

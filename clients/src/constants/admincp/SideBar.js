@@ -1,0 +1,3 @@
+export const GET_SIDE_BAR = 'GET_SIDE_BAR';
+export const GET_SIDE_BAR_SUCCESS = 'GET_SIDE_BAR_SUCCESS';
+
