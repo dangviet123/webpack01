@@ -19,7 +19,7 @@ function* checkLogin({payload}) { // đăng nhập
             localStorage.setItem('rememToken',JSON.stringify(rememToken)); // set token lưu tại máy người dùng
             yield delay(400);
             yield put(showSubmit(false));
-            window.location.href = '/homepage/admincp';
+            window.location.href = '/admincp';
         }else{
             yield delay(400);
             yield put(showSubmit(false));

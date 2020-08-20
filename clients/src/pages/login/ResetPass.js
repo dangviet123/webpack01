@@ -12,6 +12,7 @@ import { EMPTY_FIELD,MIN3,MAX225,TYPEEMAIL } from '../../constants/admincp/Valid
 import { checkRessetPass } from '../../actions/login/login';
 import { useDispatch,useSelector } from 'react-redux';
 import * as langs from '../../constants/admincp/languages';
+import logo from '../../images/logo.png';
 const validationSchema = Yup.object().shape({
     email: Yup.string().required(EMPTY_FIELD).min(3,MIN3).max(225,MAX225).email(TYPEEMAIL)
 });
@@ -48,7 +49,7 @@ function ResetPass() {
                         }) => (
                         <Form onSubmit={handleSubmit}>
                             <CardContent>
-                                <img className={classes.logoPn} onClick={locationHomePage} src={`asset/img/logo.png`} alt="logo phanam" />
+                                <img className={classes.logoPn} onClick={locationHomePage} src={logo} alt="logo phanam" />
                                 <div className={classes.titleLogin}><h5 >{langs.forgot_password}</h5></div>
                                 <Grid container spacing={3} >
                                     <Grid item xs={12}>

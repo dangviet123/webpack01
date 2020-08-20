@@ -1,67 +1,67 @@
-
+import loadable from '@loadable/component';
 // start public
-import Home from  '../pages/public/Home';
-import Introduce from  '../pages/public/Introduce';
-import Service from  '../pages/public/Service';
-import ServiceDetail from  '../pages/public/Service/detail';
-import CareerOpportunities from '../pages/public/CareerOpportunities';
-import BigEvent from '../pages/public/BigEvent';
-import CommunityResponsibility from '../pages/public/BigEvent/CommunityResponsibility';
-import CulturalActivities from '../pages/public/BigEvent/CulturalActivities';
-import TrainingDevelopment from '../pages/public/BigEvent/TrainingDevelopment';
-import ContactSupport from '../pages/public/ContactSupport';
-import Contact from '../pages/public/ContactSupport/Contact';
-import OfficePhannam from '../pages/public/ContactSupport/OfficePhannam';
-import AboutUs from '../pages/public/Introduce/AboutUs';
-import DistributionSystem from '../pages/public/Introduce/DistributionSystem';
-import CulturalActivitiesDetail from '../pages/public/BigEvent/CulturalActivities/detail';
-import TrainingDevelopmentDetail from '../pages/public/BigEvent/TrainingDevelopment/detail';
-import CommunityResponsibilityDetail from '../pages/public/BigEvent/CommunityResponsibility/detail';
-import InstructionsForFiling from '../pages/public/CareerOpportunities/InstructionsForFiling';
-import WorkingMap from '../pages/public/CareerOpportunities/WorkingMap';
-import JobsAreRecruiting from '../pages/public/CareerOpportunities/JobsAreRecruiting';
-import WelfarePolicy from '../pages/public/CareerOpportunities/WelfarePolicy';
-import WelfarePolicyDetail from '../pages/public/CareerOpportunities/WelfarePolicy/detail';
-import RecruitmentSteps from '../pages/public/CareerOpportunities/RecruitmentSteps';
-import JobsAreRecruitingDetail from '../pages/public/CareerOpportunities/JobsAreRecruiting/detail';
-import Recruitment from '../pages/public/CareerOpportunities/Recruitment';
+const Home = loadable(() => import('../pages/public/Home'));
+const Introduce = loadable(() => import('../pages/public/Introduce'));
+const Service = loadable(() => import('../pages/public/Service'));
+const ServiceDetail = loadable(() => import('../pages/public/Service/detail'));
+const CareerOpportunities = loadable(() => import('../pages/public/CareerOpportunities'));
+const BigEvent = loadable(() => import('../pages/public/BigEvent'));
+const CommunityResponsibility = loadable(() => import('../pages/public/BigEvent/CommunityResponsibility'));
+const CulturalActivities = loadable(() => import('../pages/public/BigEvent/CulturalActivities'));
+const TrainingDevelopment = loadable(() => import('../pages/public/BigEvent/TrainingDevelopment'));
+const ContactSupport = loadable(() => import('../pages/public/ContactSupport'));
+const Contact = loadable(() => import('../pages/public/ContactSupport/Contact'));
+const OfficePhannam = loadable(() => import('../pages/public/ContactSupport/OfficePhannam'));
+const AboutUs = loadable(() => import('../pages/public/Introduce/AboutUs'));
+const DistributionSystem = loadable(() => import('../pages/public/Introduce/DistributionSystem'));
+const CulturalActivitiesDetail = loadable(() => import('../pages/public/BigEvent/CulturalActivities/detail'));
+const TrainingDevelopmentDetail = loadable(() => import('../pages/public/BigEvent/TrainingDevelopment/detail'));
+const CommunityResponsibilityDetail = loadable(() => import('../pages/public/BigEvent/CommunityResponsibility/detail'));
+const InstructionsForFiling = loadable(() => import('../pages/public/CareerOpportunities/InstructionsForFiling'));
+const WorkingMap = loadable(() => import('../pages/public/CareerOpportunities/WorkingMap'));
+const JobsAreRecruiting = loadable(() => import('../pages/public/CareerOpportunities/JobsAreRecruiting'));
+const WelfarePolicy = loadable(() => import('../pages/public/CareerOpportunities/WelfarePolicy'));
+const WelfarePolicyDetail = loadable(() => import('../pages/public/CareerOpportunities/WelfarePolicy/detail'));
+const RecruitmentSteps = loadable(() => import('../pages/public/CareerOpportunities/RecruitmentSteps'));
+const JobsAreRecruitingDetail = loadable(() => import('../pages/public/CareerOpportunities/JobsAreRecruiting/detail'));
+const Recruitment = loadable(() => import('../pages/public/CareerOpportunities/Recruitment'));
 // end public
-import Login from '../pages/login';
-import ResetPass from '../pages/login/ResetPass';
+const Login = loadable(() => import('../pages/login'));
+const ResetPass = loadable(() => import('../pages/login/ResetPass'));
 // start login
 
 // end login
 
 // start admin
-import HomeAdmincp from '../pages/admincp/Home';
-import MenuType from '../pages/admincp/bgdata/MenuType';
-import ListMenu from '../components/admincp/bgdata/TypeMenu/ListMenu';
-import ChangePass from '../pages/login/ChangePass';
-import Users from '../pages/admincp/dataUsers/Users';
-import Groups from '../pages/admincp/dataUsers/Groups';
-import Permission from '../components/admincp/dataUsers/Groups/Permission';
-import ListPermission from '../pages/admincp/dataUsers/ListPermission';
-import Slider from '../pages/admincp/bgdata/Slider';
-import AddSlider from '../pages/admincp/bgdata/Slider/Add.js';
-import EditSlider from '../pages/admincp/bgdata/Slider/Edit.js';
-import Steps from '../pages/admincp/bgdata/Steps';
-import AddSteps from '../pages/admincp/bgdata/Steps/Add.js';
-import EditSteps from '../pages/admincp/bgdata/Steps/Edit.js';
+const HomeAdmincp = loadable(() => import('../pages/admincp/Home'));
+const MenuType = loadable(() => import('../pages/admincp/bgdata/MenuType'));
+const ListMenu = loadable(() => import('../components/admincp/bgdata/TypeMenu/ListMenu'));
+const ChangePass = loadable(() => import('../pages/login/ChangePass'));
+const Users = loadable(() => import('../pages/admincp/dataUsers/Users'));
+const Groups = loadable(() => import('../pages/admincp/dataUsers/Groups'));
+const Permission = loadable(() => import('../components/admincp/dataUsers/Groups/Permission'));
+const ListPermission = loadable(() => import('../pages/admincp/dataUsers/ListPermission'));
+const Slider = loadable(() => import('../pages/admincp/bgdata/Slider'));
+const AddSlider = loadable(() => import('../pages/admincp/bgdata/Slider/Add.js'));
+const EditSlider = loadable(() => import('../pages/admincp/bgdata/Slider/Edit.js'));
+const Steps = loadable(() => import('../pages/admincp/bgdata/Steps'));
+const AddSteps = loadable(() => import('../pages/admincp/bgdata/Steps/Add.js'));
+const EditSteps = loadable(() => import('../pages/admincp/bgdata/Steps/Edit.js'));
 
-import Posts from '../pages/admincp/contents/Posts';
-import AddPosts from '../pages/admincp/contents/Posts/Add';
-import EditPosts from '../pages/admincp/contents/Posts/Edit';
-import GroupTitle from '../pages/admincp/contents/GroupTitle';
-import Support from '../pages/admincp/contacts/Support';
-import Maps from '../pages/admincp/contacts/Map';
+const Posts = loadable(() => import('../pages/admincp/contents/Posts'));
+const AddPosts = loadable(() => import('../pages/admincp/contents/Posts/Add'));
+const EditPosts = loadable(() => import('../pages/admincp/contents/Posts/Edit'));
+const GroupTitle = loadable(() => import('../pages/admincp/contents/GroupTitle'));
+const Support = loadable(() => import('../pages/admincp/contacts/Support'));
+const Maps = loadable(() => import('../pages/admincp/contacts/Map'));
 
 
-import Recruit from '../pages/admincp/recruitment/Recruit';
-import AddRecruit from '../pages/admincp/recruitment/Recruit/Add';
-import EditRecruit from '../pages/admincp/recruitment/Recruit/Edit';
-import Profile from '../pages/admincp/recruitment/Profile';
-import Vacancies from '../pages/admincp/recruitment/Vacancies';
-import Area from '../pages/admincp/recruitment/Area';
+const Recruit = loadable(() => import('../pages/admincp/recruitment/Recruit'));
+const AddRecruit = loadable(() => import('../pages/admincp/recruitment/Recruit/Add'));
+const EditRecruit = loadable(() => import('../pages/admincp/recruitment/Recruit/Edit'));
+const Profile = loadable(() => import('../pages/admincp/recruitment/Profile'));
+const Vacancies = loadable(() => import('../pages/admincp/recruitment/Vacancies'));
+const Area = loadable(() => import('../pages/admincp/recruitment/Area'));
 
 // end admin
 export const ROUTE_PUBLIC = [
@@ -426,7 +426,4 @@ export const ROUTE_ADMINCP = [
         exact: true,
         component: Support
     },
-    
-
-
 ];

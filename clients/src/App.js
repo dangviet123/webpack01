@@ -50,12 +50,13 @@ function App(props) {
               <CssBaseline />
               <ToastContainer />
               <MuiPickersUtilsProvider utils={MomentUtils} locale="vi">
+              <Suspense fallback={<div></div>}>
                 <Switch >
                     {renderRoutesPublic(ROUTE_PUBLIC)}
                     {renderRoutesLogin(ROUTE_LOGIN)}
                     {renderRoutesAdmin(ROUTE_ADMINCP)}
                 </Switch>
-                
+              </Suspense>
               </MuiPickersUtilsProvider>
             </ConnectedRouter>
         </ThemeProvider>

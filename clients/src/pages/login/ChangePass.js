@@ -13,6 +13,7 @@ import { checkChangePass,checkTokenChangePasss } from '../../actions/login/login
 import { useDispatch,useSelector } from 'react-redux';
 import {useParams} from 'react-router-dom';
 import * as langs from '../../constants/admincp/languages';
+import logo from '../../images/logo.png';
 const validationSchema = Yup.object().shape({
     password: Yup.string().required(EMPTY_FIELD).min(3,MIN3).max(225,MAX225),
     password_confirmation: Yup.string().required(EMPTY_FIELD).min(3,MIN3).max(225,MAX225).oneOf([Yup.ref('password'), null], 'Xác nhận mật khẩu không đúng')
@@ -54,7 +55,7 @@ function ChangePass() {
                         }) => (
                         <Form onSubmit={handleSubmit}>
                             <CardContent>
-                                <img className={classes.logoPn} onClick={locationHomePage} src={`asset/img/logo.png`} alt="logo phanam" />
+                                <img className={classes.logoPn} onClick={locationHomePage} src={logo} alt="logo phanam" />
                                 <div className={classes.titleLogin}><h5 >{langs.change_the_password}</h5></div>
                                 <Grid container spacing={3} >
                                     <Grid item xs={12}>

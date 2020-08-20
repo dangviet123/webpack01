@@ -51,6 +51,7 @@ module.exports = {
     node: {
         fs: "empty"
     },
+    mode: 'development',
     devServer: {
         port: 8080,
         //open: true
@@ -61,7 +62,7 @@ module.exports = {
       vendor: lbr // cache các thư viện lại
     },
     output: {
-        filename: '[name].[chunkhash].js', // file bundle
+        filename: '[name].[chunkhash].chunks.js', // file bundle
         path: path.join(__dirname, 'dist') // đường dẫn cho file
     },
     module: {
@@ -109,7 +110,7 @@ module.exports = {
             name: "manifest",
         }
     },
-    //devtool: 'inline-source-map',
+    devtool: 'inline-source-map',
     plugins: [
         new MiniCssExtractPlugin(),
         new HtmlWebpackPlugin({
