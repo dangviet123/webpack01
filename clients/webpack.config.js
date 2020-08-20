@@ -1,69 +1,25 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const lbr =[
-    '@date-io/date-fns',
-    '@date-io/moment',
-    '@jandenma/xlsx-style',
-    '@material-ui/core',
-    '@material-ui/icons',
-    '@material-ui/lab',
-    '@material-ui/pickers',
-    '@material-ui/styles',
-    'animated-number-react',
-    '@loadable/component',
-    'axios',
-    'chart.js',
-    'ckeditor4-react',
-    'connected-react-router',
-    'date-fns',
-    'file-saver',
-    'formik',
-    'google-map-react',
-    'history',
-    'moment',
-    'moment-timezone',
-    'query-string',
-    'react',
-    'react-awesome-slider',
-    'react-chartjs-2',
-    'react-dom',
-    'react-lazy-load-image-component',
-    'react-moment',
-    'react-nestable',
-    'react-redux',
-    'react-redux-loading-bar',
-    'react-render-html',
-    'react-responsive-carousel',
-    'react-router-dom',
-    'react-sortablejs',
-    'react-switch',
-    'react-to-print',
-    'react-toastify',
-    'react-youtube',
-    'redux',
-    'redux-saga',
-    'simple-react-lightbox',
-    'xlsx',
-    'yup'
-];
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
     node: {
         fs: "empty"
     },
     mode: 'development',
     devServer: {
-        port: 8080,
+        port: 8081,
         //open: true
         historyApiFallback: true,
+        contentBase: './dist'
     },
     entry: {
-      bundle: './src/index.js', // file chạy chính  
-      vendor: lbr // cache các thư viện lại
+      bundle: './src/index.js', // file chạy chính
     },
     output: {
         filename: '[name].[chunkhash].chunks.js', // file bundle
-        path: path.join(__dirname, 'dist') // đường dẫn cho file
+        path: path.join(__dirname, 'dist'), // đường dẫn cho file
+        publicPath: '/' // thư mục public
     },
     module: {
         rules: [
@@ -94,27 +50,30 @@ module.exports = {
         ]
     },
     optimization: {
-        splitChunks: {
-            cacheGroups: {
-                commons: {
-                    test: /[\\/]node_modules[\\/]/,
-                    name: 'vendor',
-                    chunks: 'all'
-                }
-            }
-        },
         // splitChunks: {
-        //     chunks: 'all'
-        // },
+        //     cacheGroups: {
+        //       vendor: {
+        //         test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+        //         name: 'vendor',
+        //         chunks: 'all',
+        //       }
+        //     }
+        //   },
+        splitChunks: {
+            chunks: 'all'
+        },
         runtimeChunk: {
             name: "manifest",
         }
     },
     devtool: 'inline-source-map',
     plugins: [
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename: "[name].[chunkhash].chunks.css",
+        }),
         new HtmlWebpackPlugin({
             template: 'public/index.html',
-        })
+        }),
+        new CleanWebpackPlugin()
     ],
 }
