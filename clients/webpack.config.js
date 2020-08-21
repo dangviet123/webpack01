@@ -1,39 +1,43 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 module.exports = {
     node: {
-        fs: "empty"
+        fs: 'empty'
     },
-    mode: 'development',
+    devtool: false,
     devServer: {
+        compress: true,
         port: 8081,
-        //open: true
         historyApiFallback: true,
-        contentBase: './dist'
     },
     entry: {
-      bundle: './src/index.js', // file chạy chính
+      bundle: './src/index.js', // file chạy chính 
     },
     output: {
-        filename: '[name].[chunkhash].chunks.js', // file bundle
-        path: path.join(__dirname, 'dist'), // đường dẫn cho file
-        publicPath: '/' // thư mục public
+        filename: 'js/[name].[chunkhash].js', // file bundle
+        path: path.resolve(__dirname, 'dist') // đường dẫn cho file
     },
     module: {
         rules: [
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: 'babel-loader'
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env','@babel/preset-react'], // biên dịch es6,7 jsx
+                        plugins: ["@babel/plugin-proposal-class-properties","@babel/plugin-syntax-dynamic-import","@loadable/babel-plugin","@babel/plugin-transform-runtime"] // sử dung error func es6
+                    }
+                }
             },
             {
                 test: /\.css$/i,
                 use: [MiniCssExtractPlugin.loader, 'css-loader']
             },
             {
-                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                test: /\.(ttf|woff2|woff|dtd|svg|eot)$/i,
                 loader: 'file-loader',
                 options: {
                     outputPath: 'fonts',
@@ -50,30 +54,16 @@ module.exports = {
         ]
     },
     optimization: {
-        // splitChunks: {
-        //     cacheGroups: {
-        //       vendor: {
-        //         test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
-        //         name: 'vendor',
-        //         chunks: 'all',
-        //       }
-        //     }
-        //   },
         splitChunks: {
-            chunks: 'all'
+            chunks: 'all',
         },
-        runtimeChunk: {
-            name: "manifest",
-        }
+        runtimeChunk: {name: "manifest"} // cacche lại các file khi không thay đổi
     },
-    devtool: 'inline-source-map',
+    
     plugins: [
-        new MiniCssExtractPlugin({
-            filename: "[name].[chunkhash].chunks.css",
-        }),
+        new MiniCssExtractPlugin({filename: "[name].css"}),
         new HtmlWebpackPlugin({
             template: 'public/index.html',
-        }),
-        new CleanWebpackPlugin()
+        })
     ],
 }
